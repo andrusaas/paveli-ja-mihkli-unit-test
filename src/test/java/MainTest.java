@@ -22,7 +22,7 @@ class MainTest {
 
     @Test
     void testPerformOperationConvertsRejectsInvalidInput() {
-        ByteArrayInputStream in = new ByteArrayInputStream("not a number".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("asd asd sa".getBytes());
         Scanner scanner = new Scanner(in);
 
         Feet feet = new Feet(MetricUnits.m);
@@ -31,13 +31,13 @@ class MainTest {
 
         String output = outputStreamListener.toString();
 
-        String expectedErrorMessasge = "Expected output with error message ";
+        String expectedErrorMessage = "Entered value is not a number!\n";
 
         assertTrue(output.endsWith(
                 "Entered value is not a number!\n"),
-                "Expected output with error message " +
-                        "'" + expectedErrorMessasge +
-                        "', actual output:" + output
+                "Expected output with error message:\n" +
+                        expectedErrorMessage +
+                        "Actual output:\n" + output
         );
     }
 
