@@ -33,8 +33,8 @@ class MainTest {
 
         String expectedErrorMessage = "Entered value is not a number!\n";
 
-        assertTrue(output.endsWith(
-                "Entered value is not a number!\n"),
+        assertTrue(
+                output.endsWith(expectedErrorMessage),
                 "Expected output with error message:\n" +
                         expectedErrorMessage +
                         "Actual output:\n" + output
